@@ -38,6 +38,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :size, :rating, variants_attributes: %i[name color])
+    params.require(:car).permit(:brand, :size, :rating, variants_attributes: %i[id name color _destroy])
   end
 end

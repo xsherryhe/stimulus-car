@@ -42,10 +42,11 @@
 
   <div data-controller="variants-form"  
        data-variants-form-index-value="<%= car.variants.size %>">
+  <%# To do: Move 'delete variant' link to under each variant %>
     <h4>Variants:</h4>
     <div data-variants-form-target="container">
       <%= form.fields_for :variants do |variant_form| %>
-        <div data-variants-form-target="fieldset">
+        <div data-variants-form-target="fieldSet">
           <h5>Variant # <%= variant_form.index + 1 %> </h5>
           <div class="field">
             <%= variant_form.label :name %>
@@ -59,8 +60,8 @@
       <% end %>
     </div>
 
-    <div><a href='#' data-action="variants-form#addVariant">Add a variant</a></div>
-    <div><a href='#' data-action="variants-form#deleteVariant">Delete a variant</a></div>
+    <div><%= link_to 'Add a variant', '#', data: { action: 'variants-form#addVariant' } %></div>
+    <div><%= link_to 'Delete a variant', '#', data: { action: 'variants-form#deleteVariant' } %></div>
   </div>
 
   <%= form.submit %>
