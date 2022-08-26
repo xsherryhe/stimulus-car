@@ -1,0 +1,12 @@
+<h4>Main Information</h4>
+
+<div>Brand: <%= car.brand %></div>
+<div>Size: <%= car.size %></div>
+<div>Rating: <%= car.rating %></div>
+
+<h4>Variants</h4>
+<% car.variants.each_with_index do |variant, i| %>
+  <h5>Variant # <%= i + 1 %></h5>
+  <div>Name: <%= variant.name %></div>
+  <div>Color: <%= variant.color %></div>
+<% end %>

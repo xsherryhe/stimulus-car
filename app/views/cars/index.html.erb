@@ -1,0 +1,6 @@
+<h2>All Cars</h2>
+<h4><%= link_to 'New Car', new_car_path %></h4>
+
+<% @cars.each_with_index do |car, i| %>
+  <div><%= link_to "Car ##{i + 1}", car %></div>
+<% end %>
